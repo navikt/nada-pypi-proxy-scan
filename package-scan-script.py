@@ -52,7 +52,7 @@ def post_slack_message(scan_error_reports):
                 blocks=scan_error_reports,
             )
         except SlackApiError as e:
-            print(f"Error sending slack notification {e.response['error']}")
+            logging.error(f"Error sending slack notification {e.response['error']}")
 
 
 if __name__ == "__main__":
