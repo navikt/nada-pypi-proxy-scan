@@ -48,7 +48,7 @@ spec:
           serviceAccountName: pypi-proxy-scan
           containers:
           - name: pypi-proxy-scan
-            image: europe-north1-docker.pkg.dev/knada-gcp/knada-north/pypi-proxy-scan:v3
+            image: europe-north1-docker.pkg.dev/knada-gcp/knada-north/pypi-proxy-scan:v4
             env:
               - name: SLACK_CHANNEL
                 value: "#nada-alerts-dev"
