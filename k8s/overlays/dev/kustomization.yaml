@@ -4,3 +4,8 @@ resources:
 patches:
 - path: cloudsql-proxy-patch.yaml
 - path: hostname-patch.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: europe-north1-docker.pkg.dev/knada-gcp/knada-north/pypi-proxy-scan
+  newTag: 2cf8f3967410682446c8ad5f5e054f33fa413767
