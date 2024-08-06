@@ -13,3 +13,5 @@ spec:
             env:
               - name: SLACK_CHANNEL
                 value: "#nada-alerts-dev"
+              - name: GAR_REPOSITORY_PATH
+                value: "projects/knada-dev/locations/europe-north1/repositories/pypiproxy"
