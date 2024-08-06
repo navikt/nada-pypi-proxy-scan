@@ -2,8 +2,9 @@ resources:
 - ../../base
 
 patches:
-- path: cloudsql-proxy-patch.yaml
-- path: hostname-patch.yaml
+- path: cronjob-patch.yaml
+- path: service-account-patch.yaml
+
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
