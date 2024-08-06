@@ -9,4 +9,4 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: europe-north1-docker.pkg.dev/knada-gcp/knada-north/pypi-proxy-scan
-  newTag: 8884c2ea74e96d0750a0f41d220343dc60687dbe
+  newTag: 98e5f17447d9f22483fd0cc7afc523fbf039515a
