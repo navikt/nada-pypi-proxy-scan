@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  IMAGE_NAME: europe-north1-docker.pkg.dev/knada-gcp/knada-north/pypi-proxy-scan
+  IMAGE_NAME: europe-north1-docker.pkg.dev/knada-gcp/knada-north/nada-pypi-proxy-scan
 
 jobs:
   build-and-push:
