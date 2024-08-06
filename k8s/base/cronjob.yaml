@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: pypi-proxy-scan
+  namespace: monitoring
+  labels:
+    app: pypi-proxy-scan
+spec:
+  schedule: "0 8 * * *"
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: pypi-proxy-scan
+        spec:
+          restartPolicy: Never
+          serviceAccountName: pypi-proxy-scan
+          containers:
+          - name: pypi-proxy-scan
+            image: europe-north1-docker.pkg.dev/knada-gcp/knada-north/pypi-proxy-scan
+            env:
+              - name: SLACK_CHANNEL
+                value: "#nada-alerts-dev"
+              - name: GAR_REPOSITORY_PATH
+                value: "projects/knada-dev/locations/europe-north1/repositories/pypiproxy"
+            envFrom:
+              - secretRef:
+                  name: nadabot-slack-token

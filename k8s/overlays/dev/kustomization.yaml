@@ -1,0 +1,6 @@
+resources:
+- ../../base
+
+patches:
+- path: cloudsql-proxy-patch.yaml
+- path: hostname-patch.yaml

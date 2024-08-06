@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: pypi-proxy-scan
+  namespace: monitoring
+spec:
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: pypi-proxy-scan
+            env:
+              - name: SLACK_CHANNEL
+                value: "#nada-alerts-dev"

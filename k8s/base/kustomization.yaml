@@ -1,0 +1,5 @@
+resources:
+  - cronjob.yaml
+  - netpol.yaml
+  - fqdn-netpol.yaml
+  - service-account.yaml
